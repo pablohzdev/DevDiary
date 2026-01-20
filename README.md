@@ -9,9 +9,9 @@ This repository tracks my notes, projects, exercises, successes, and failures. I
 Build a website that helps people find jobs within their local communities.
 
 ## 🗺️ Roadmap
-- [ ] **Phase 1: Introduction to Web Development** (The Odin Project - Foundations)
-- [ ] **Phase 2: Web Foundations** (The Odin Project - Foundations)
-- [ ] **Phase 3: Git Basics**
+- [✅] **Phase 1: Introduction to Web Development** (01-introduction-to-web)
+- [✅] **Phase 2: Web Basics** (01-introduction-to-web)
+- [✅] **Phase 3: Git Basics** (01-introduction-to-web)
 
 > NOTE:
 > *The following phases are subject to change as I progress:*
