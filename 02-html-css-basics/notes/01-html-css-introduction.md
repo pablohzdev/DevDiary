@@ -1,9 +1,5 @@
 # Introduction to HTML, CSS, and JavaScript: How It Works
 
-> **Disclaimer**  
-> These notes represent my personal understanding of fundamental web development concepts.  
-> They are written for learning purposes and do not reproduce any specific course material.
-
 ---
 
 ## Overview
