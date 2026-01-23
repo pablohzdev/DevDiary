@@ -1,9 +1,5 @@
 # Basic Preparation: Web Basics
 
-> **Disclaimer:**  
-> These notes reflect my personal understanding of how the web works.  
-> They are written for learning purposes and do not reproduce any proprietary course material.
-
 ---
 
 ## 1. What Is the Internet?

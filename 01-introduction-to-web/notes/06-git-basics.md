@@ -1,9 +1,5 @@
 # Basics: Git & GitHub – Intro
 
-> **Disclaimer**  
-> These notes represent my personal understanding of fundamental computing concepts.  
-> They are written for learning purposes and do not reproduce any specific course material.
-
 ---
 
 ## Environment

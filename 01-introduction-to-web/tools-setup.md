@@ -1,6 +1,6 @@
 # 🛠️ Tools & Setup
 
-This document lists the tools, applications, and configurations I use for my development workflow.
+This document lists the tools, applications, and configurations I use for my development workflow in phase 01.
 
 ## 💻 Core Applications
 
@@ -21,8 +21,3 @@ This document lists the tools, applications, and configurations I use for my dev
 ## ⚙️ Terminal Configuration
 - **Shell:** Zsh (Mac default).
 - **Warp Features:** Using "Warp AI" for quick terminal command explanations.
-
----
-
-> [!TIP]
-> I will be updating this list as I discover new tools that improve my productivity during this project.

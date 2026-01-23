@@ -1,9 +1,5 @@
 # Basic Preparation: Git Setup
 
-> **Disclaimer:**  
-> These notes reflect my personal understanding of Git and GitHub setup.  
-> They are intended for learning purposes and do not reproduce any proprietary documentation.
-
 ---
 
 ## 1. What Is Git?

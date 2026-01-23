@@ -1,9 +1,5 @@
 # Basics: Git & GitHub Introduction – Version Control
 
-> **Disclaimer:**  
-> These notes reflect my personal understanding of version control concepts.  
-> They are written for learning purposes and do not reproduce proprietary documentation.
-
 ---
 
 ## 1. What Is a Version Control System (VCS)?

@@ -1,9 +1,5 @@
 # Basic Preparation: Introduction & Mindset
 
-> **Disclaimer:**  
-> These notes are based on my personal interpretation and learning experience.  
-> They summarize general concepts inspired by external resources but do not reproduce original course material.
-
 ---
 
 ## 1. Understanding the Professional Landscape
