@@ -1,12 +1,13 @@
-# CSS: Selectors
+# CSS: Selectors  
 
-## Selector
+## What is a selector?  
 
-Selector refer to the hTML element to which CSS rules apply; they're what is actually being "selected" for each rule. 
+In CSS, a selector indicates which HTML elements a rule should apply to. In other words, is the way that we “select" the elements that we want to stylize.  
 
-## Universal selector
+## Universal selector  
 
-The universal selector will select elements of every type (as in the whole document), hence the name "universal", and the syntax for it is a simple asterisk. In the example below, every element would have the color: purple; style applied it
+The universal selector targets **all elements** in a document. It is represented by an asterisk (`*`).  
+In the example below, every element on the page would receive the style `color: purple;`.  
 
 ```css
 * {
@@ -14,37 +15,40 @@ The universal selector will select elements of every type (as in the whole docum
 }
 ```
 
-## Type selector
+## Type (element) selector  
 
-A type selector (or element selector) will select all elements of the given element type, and the syntax is just the name of the element:
+A type selector (also called an element selector) selects all elements of a given HTML tag. Its syntax is simply the name of the element.  
+
+Example HTML:  
 
 ```html
-<!-- index.html -->
-
 <div>Hello, World!</div>
 <div>Hello again!</div>
 <p>Hi...</p>
 <div>Okay, bye.</div>
 ```
 
-```css
-/* styles.css */
+Example CSS:  
 
+```css
 div {
   color: white;
 }
 ```
 
-Here, all three <div> elements would be selected, while the <p> element wouldn't be
+In this case, all three `<div>` elements would be styled, but the `<p>` element would not.  
 
-## Class selectors 
+## Class selectors  
 
-Class selectors will select all elements with the given class, which is just an attribute you place on an HTML element.
+Class selectors target all elements that share a specific class. A class is an attribute that you assign to an HTML element.  
+
+Example HTML:  
 
 ```html
 <div class="alert-text">Please agree to our terms of service.</div>
-
 ```
+
+Example CSS:  
 
 ```css
 .alert-text {
@@ -52,24 +56,155 @@ Class selectors will select all elements with the given class, which is just an 
 }
 ```
 
-Syntax for class selectors: a period inmediately followed by the case-sensitive value of the class attrubute. Classes aren't required to be specific to a particular element, so you can use the same class on as many elements as you want.
+Class selectors are written using a period (`.`) followed immediately by the class name. Class names are case-sensitive.  
 
-Class selectors won't work if the class name begins with a number, like 1-element, using a .1-elements as a selector won't match it.
+You can reuse the same class on multiple elements — classes are not unique.  
 
-You can add multiple classes to a single element as a space-separated list, such as class="alert-text severe-alert". Since whitespace is sed to separate class names like this, you should never use spaces for multi-worded names and should use a hyphen instead.
+A class name **cannot start with a number** (for example, `1-element` would be invalid).  
 
-## ID selectors
+You can assign multiple classes to a single element by separating them with spaces, like this:  
+`class="alert-text severe-alert"`.  
+Because spaces separate class names, multi-word class names should use hyphens instead of spaces.  
 
-ID selectors are similar to class selectors. The select an element with the given ID, which is another attribute you place on an HTML elements. The major difference between classes and IDs is that an element can only have one ID. It cannot be repeated on a single page and should noy contain any whitespace:
+## ID selectors  
+
+ID selectors work similarly to class selectors, but with an important difference: **an ID must be unique on a page**. No two elements should share the same ID. IDs also cannot contain spaces.  
+
+Example HTML:  
 
 ```html
-<div id='tittle">My page</div>
+<div id="title">My page</div>
 ```
 
+Example CSS:  
+
 ```css
-#tittle{
+#title {
   background-color: red;
 }
 ```
 
-For IDs, instead of a period, we use a hashtag in
+Instead of a period, ID selectors use a hashtag (`#`) followed by the ID name.  
+
+Many developers overuse IDs when a class would be enough. You should generally prefer classes unless you specifically need an ID (for example, for navigation links or very specific styling cases).  
+
+Like classes, **IDs cannot begin with a number**.  
+
+## Grouping selectors  
+
+Sometimes different selectors share the same styles. Instead of repeating the same rules, we can group them using commas.  
+
+Example without grouping:  
+
+```css
+.read {
+    color: white;
+    background-color: black;
+}
+
+.unread {
+    color: white;
+    background-color: black;
+}
+```
+
+Example with grouping:  
+
+```css
+.read,
+.unread {
+    color: white;
+    background-color: black;
+}
+
+.read {
+    /* unique styles */
+}
+
+.unread {
+    /* unique styles */
+}
+```
+
+This reduces repetition and keeps the CSS cleaner.  
+
+## Chaining selectors  
+
+You can combine multiple selectors **without spaces** to target elements that match all of them at the same time.  
+
+Example HTML:  
+
+```html
+<div>
+    <div class="subsection header">Latest Posts</div>
+    <p class="subsection preview">This is where a preview for a post might go.</p>
+</div>
+```
+
+If we want to style only the element that has **both** `subsection` and `header`, we can chain the selectors:  
+
+```css
+.subsection.header {
+    color: red;
+}
+```
+
+This selects elements that contain **both** classes at the same time. Notice there is **no space** between them.  
+
+You can also chain a class with an ID:  
+
+Example HTML:  
+
+```html
+<div>
+    <div class="subsection header">Latest Posts</div>
+    <p class="subsection" id="preview">This is where a preview for a post might go.</p>
+</div>
+```
+
+Example CSS:  
+
+```css
+.subsection.header {
+    color: red;
+}
+
+.subsection#preview {
+    color: blue;
+}
+```
+
+Note: You **cannot chain two type selectors**, because an element cannot be two different HTML tags at the same time.  
+
+## Descendant combinator  
+
+Combinators describe relationships between selectors instead of just selecting elements directly.  
+
+The **descendant combinator** is represented by a space between selectors. It selects elements that are inside another element, no matter how deeply nested they are.  
+
+For example, `.ancestor .child` means:  
+> “Select `.child` only if it is inside an element with class `.ancestor`.”  
+
+Example HTML:  
+
+```html
+<div class="ancestor">
+    <div class="contents">
+        <div class="contents"></div>
+    </div>
+</div>
+
+<div class="contents"></div>
+```
+
+Example CSS:  
+
+```css
+.ancestor .contents {
+    /* styles */
+}
+```
+
+In this case, the **first two** `.contents` elements would be selected, but the last one would not, because it is not inside `.ancestor`.  
+
+You can chain multiple descendant selectors like `.one .two .three .four`, but this is generally not recommended because it can become hard to read and may cause specificity problems.  
