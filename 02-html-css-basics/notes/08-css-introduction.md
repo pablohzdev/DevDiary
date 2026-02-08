@@ -30,3 +30,10 @@ Example:
 div.bold-text { /* selector */
     font-weight: 700; /* property: value */
 }
+```
+
+## Semantic HTML  
+
+A `<div>` is a basic HTML container element. By itself, it doesn’t have any meaning — it simply groups other elements together.  
+
+Whenever possible, it’s better to use more meaningful (semantic) elements like `<h1>` for headings or `<p>` for paragraphs. However, there are many situations where you just need a general container to organize your layout, and that’s when `<div>` becomes useful.  
